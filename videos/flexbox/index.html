@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+        }
+        
+        .column {
+            float: left;
+        }
+
+        .sidebar {
+            width: 25%;
+        }
+
+        .main-content {
+            width: 50%;
+        }
+
+        .container-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .container-cards img {
+            width: 100%;
+        }
+
+        .card {
+            max-width: 33%;
+            margin-bottom: 12px;
+            border: 1px solid #CCC;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .column, .sidebar, .main-content {
+                float: none;
+                width: 100%;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .card {
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column sidebar">
+            <h2>Sidebar 1</h2>
+            <p>This is the content for the first sidebar</p>
+        </div>
+
+        <div class="column main-content">
+            <h2>Main Content</h2>
+            <p>This is the main content area</p>
+        </div>
+
+        <div class="column sidebar">
+            <h2>Sidebar 2</h2>
+            <p>This is the content for the second sidebar</p>
+        </div>
+    </div>
+
+    <div class="container-cards">
+        <div class="card">
+            <img src="https://www.adorama.com/alc/wp-content/uploads/2017/11/shutterstock_114802408.jpg" alt="">
+            <h2>Card 1</h2>
+            <p>This is the content for the first card.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/3227984/pexels-photo-3227984.jpeg?cs=srgb&dl=pexels-szab%C3%B3-viktor-3227984.jpg&fm=jpg" alt="">
+            <h2>Card 2</h2>
+            <p>This is the content for the first card.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://www.adorama.com/alc/wp-content/uploads/2017/11/shutterstock_170805947.jpg" alt="">
+            <h2>Card 3</h2>
+            <p>This is the content for the first card.</p>
+        </div>
+    </div>
+</body>
+</html>

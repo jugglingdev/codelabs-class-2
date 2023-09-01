@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+        }
+        
+        .column {
+            float: left;
+        }
+
+        .sidebar {
+            width: 25%;
+        }
+
+        .main-content {
+            width: 50%;
+        }
+
+        .container-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .container-cards img {
+            width: 100%;
+        }
+
+        .card {
+            max-width: 33%;
+            margin-bottom: 12px;
+            border: 1px solid #CCC;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: background 1s;
+            animation: slideFromLeft 1s forwards;
+
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        .card:hover {
+            background: gray;
+            opacity: 70%;
+            cursor: pointer;
+            transition: background 1s;
+        }
+
+        @keyframes slideFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            75% {
+                transform: translateX(-80%);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .card:nth-child(1) {
+            animation-delay: .3s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: .6s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: .9s;
+        }
+
+        .card-image {
+            position: relative;
+        }
+
+        .card-title {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            z-index: 10;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: black;
+            opacity: 50%;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .card {
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .column, .sidebar, .main-content {
+                float: none;
+                width: 100%;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+        <div class="column sidebar">
+            <h2>Sidebar 1</h2>
+            <p>This is the content for the first sidebar</p>
+        </div>
+
+        <div class="column main-content">
+            <h2>Main Content</h2>
+            <p>This is the main content area</p>
+
+            <div class="container-cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://www.adorama.com/alc/wp-content/uploads/2017/11/shutterstock_114802408.jpg" alt="">
+                        <h2 class="card-title">Card 1</h2>
+                        <div class="overlay">
+
+                        </div>
+                    </div>
+                    <p>This is the content for the first card.</p>
+                </div>
+        
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/3227984/pexels-photo-3227984.jpeg?cs=srgb&dl=pexels-szab%C3%B3-viktor-3227984.jpg&fm=jpg" alt="">
+                        <h2 class="card-title">Card 2</h2>
+                        <div class="overlay">
+                            
+                        </div>
+                    </div>
+                    <p>This is the content for the first card.</p>
+                </div>
+        
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://www.adorama.com/alc/wp-content/uploads/2017/11/shutterstock_170805947.jpg" alt="">
+                        <h2 class="card-title">Card 3</h2>
+                        <div class="overlay">
+                            
+                        </div>
+                    </div>
+                    <p>This is the content for the first card.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column sidebar">
+            <h2>Sidebar 2</h2>
+            <p>This is the content for the second sidebar</p>
+        </div>
+    </div>
+
+</body>
+</html>

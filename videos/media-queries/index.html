@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            text-align: center;
+        }
+        
+        .column {
+            float: left;
+        }
+
+        .sidebar {
+            width: 25%;
+        }
+
+        .main-content {
+            width: 50%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .column, .sidebar, .main-content {
+                float: none;
+                width: 100%;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column sidebar">
+            <h2>Sidebar 1</h2>
+            <p>This is the content for the first sidebar</p>
+        </div>
+
+        <div class="column main-content">
+            <h2>Main Content</h2>
+            <p>This is the main content area</p>
+        </div>
+
+        <div class="column sidebar">
+            <h2>Sidebar 2</h2>
+            <p>This is the content for the second sidebar</p>
+        </div>
+    </div>
+</body>
+</html>
